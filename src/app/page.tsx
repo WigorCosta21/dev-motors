@@ -1,7 +1,9 @@
+import { SubMenu } from "@/components/home/SubMenu";
+
 const Home = () => {
   return (
     <main>
-      <h1>DevMotors</h1>
+      <SubMenu />
     </main>
   );
 };
