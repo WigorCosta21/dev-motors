@@ -7,7 +7,7 @@ export interface HomeProps {
         url: string;
       };
       heading: string;
-      cta_Button: {
+      cta_button: {
         title: string;
         url: string;
       };
