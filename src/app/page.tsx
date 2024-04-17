@@ -1,9 +1,11 @@
 import { Phone } from "lucide-react";
 
 import { Hero } from "@/components/Hero";
+import { Service } from "@/components/home/Services";
 import { SubMenu } from "@/components/home/SubMenu";
 import { getDataHome } from "@/utils/actions/getData";
 import { HomeProps } from "@/utils/home.type";
+import { Container } from "@/components/Container";
 
 const Home = async () => {
   const { object }: HomeProps = await getDataHome();
@@ -18,6 +20,9 @@ const Home = async () => {
         buttonUrl={object.metadata.cta_button.url}
         icon={<Phone size={24} color="#FFF" />}
       />
+      <Container>
+        <Service object={object} />
+      </Container>
     </main>
   );
 };
