@@ -6,6 +6,7 @@ import { SubMenu } from "@/components/home/SubMenu";
 import { getDataHome } from "@/utils/actions/getData";
 import { HomeProps } from "@/utils/home.type";
 import { Container } from "@/components/Container";
+import { Footer } from "@/components/home/Footer";
 
 const Home = async () => {
   const { object }: HomeProps = await getDataHome();
@@ -22,6 +23,7 @@ const Home = async () => {
       />
       <Container>
         <Service object={object} />
+        <Footer object={object} />
       </Container>
     </main>
   );
