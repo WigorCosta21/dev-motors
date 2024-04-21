@@ -20,7 +20,7 @@ const Home = async () => {
       <Hero
         heading={object.metadata.heading}
         buttonTitle={object.metadata.cta_button.title}
-        banner_url={object.metadata.banner.url}
+        bannerUrl={object.metadata.banner.url}
         buttonUrl={object.metadata.cta_button.url}
         icon={<Phone size={24} color="#FFF" />}
       />

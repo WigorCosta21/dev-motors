@@ -20,6 +20,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
+        <p style={{ textAlign: "center", marginTop: 54, marginBottom: 24 }}>
+          Todos direitos reservados @{`${new Date().getFullYear()}`}
+        </p>
       </body>
     </html>
   );

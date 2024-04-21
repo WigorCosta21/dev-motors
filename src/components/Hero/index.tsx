@@ -6,13 +6,13 @@ interface HeroProps {
   heading: string;
   buttonUrl: string;
   buttonTitle: string;
-  banner_url: string;
+  bannerUrl: string;
   icon: ReactNode;
 }
 
 export const Hero = ({
   heading,
-  banner_url,
+  bannerUrl,
   buttonTitle,
   buttonUrl,
   icon,
@@ -31,10 +31,11 @@ export const Hero = ({
       <div className={styles.contentBanner}>
         <Image
           className={styles.banner}
-          src={banner_url}
+          src={bannerUrl}
           alt={heading}
-          priority
           quality={100}
+          priority={true}
+          sizes="(max-width: 480px) 100vw, (max-width: 1024px) 75vw, 60vw"
           fill={true}
         />
       </div>
