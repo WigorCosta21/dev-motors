@@ -1,11 +1,54 @@
+import Image from "next/image";
+import { Metadata } from "next";
 import { Phone } from "lucide-react";
+
+import { Hero } from "@/components/Hero";
+import { Container } from "@/components/Container";
+
 import { getItemBySlug } from "@/utils/actions/getData";
 import { PostProps } from "@/utils/post.type";
-import { Hero } from "@/components/Hero";
 
 import styles from "./styles.module.scss";
-import { Container } from "@/components/Container";
-import Image from "next/image";
+
+export const generateMetadata = async ({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata> => {
+  try {
+    const { objects }: PostProps = await getItemBySlug(slug).catch(() => {
+      return {
+        title: "DevMotors - Sua oficina especializada!",
+        description: "Oficina de carros em São Paulo",
+      };
+    });
+
+    return {
+      title: `DevMotors - ${objects[0].title}`,
+      description: `${objects[0].metadata.description.text}`,
+      keywords: ["devmotors", "troca de oleo", "devmotors troca de oleo"],
+      openGraph: {
+        title: `DevMotors - ${objects[0].title}`,
+        images: [`${objects[0].metadata.banner.url}`],
+      },
+      robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: true,
+        },
+      },
+    };
+  } catch (err) {
+    return {
+      title: "DevMotors - Sua oficina especializada!",
+      description: "Oficina de carros em São Paulo",
+    };
+  }
+};
 
 const Page = async ({ params: { slug } }: { params: { slug: string } }) => {
   const { objects }: PostProps = await getItemBySlug(slug);
