@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Ótimo, agora com todas as partes do seu código, posso criar um README completo para a sua aplicação. Aqui está:
 
-## Getting Started
+---
 
-First, run the development server:
+# DevMotors - Sua Oficina Especializada
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Descrição
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+DevMotors é uma aplicação web para uma oficina especializada em carros localizada em São Paulo. A aplicação permite aos usuários conhecerem mais sobre a oficina, seus serviços oferecidos, informações de contato e visualizar posts sobre diversos tópicos relacionados a manutenção automotiva. Desenvolvido através do curso FullStack do Sujeito Programador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tecnologias Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- React.js
+- Next.js
+- Next.js Navigation
+- Lucide React
+- SCSS
 
-## Learn More
+## Instalação
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone o repositório:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone <URL_DO_REPOSITORIO>
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. Instale as dependências:
 
-## Deploy on Vercel
+   ```bash
+   cd DevMotors
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Execute a aplicação:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm run dev
+   ```
+
+   A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
+
+## Funcionalidades
+
+- **Página Inicial**: Apresenta informações sobre a oficina, seus serviços e formas de contato.
+- **Posts**: Os usuários podem visualizar posts sobre diversos tópicos relacionados a manutenção automotiva.
+- **Navegação**: Navegação entre páginas é suave e rápida, utilizando o Next.js Navigation.
+- **Página de Erro Personalizada**: Uma página de erro personalizada é exibida caso o usuário tente acessar uma página que não existe.
+
+## Principais Componentes
+
+- **Hero**: Componente responsável por exibir o título, botão de ação e imagem de banner.
+- **Container**: Componente utilizado para envolver o conteúdo das páginas, fornecendo um layout consistente.
+- **Header**: Cabeçalho fixo exibido em todas as páginas, permitindo a navegação entre as diferentes seções da aplicação.
+- **SubMenu**: Componente que exibe um submenu de páginas disponíveis, utilizado na página principal.
+- **Content**: Componente responsável por renderizar o conteúdo de um post específico.
+- **Error**: Componente que exibe uma mensagem de erro quando uma página não é encontrada.
+- **LoadingPost**: Componente de carregamento exibido enquanto o conteúdo do post está sendo carregado.
+
+## API
+
+A aplicação consome uma API do CMS Cosmicjs para obter dados dinâmicos, como informações sobre a oficina, serviços oferecidos, e posts. Alguns endpoints importantes são:
+
+- **getDataHome**: Obtém os dados da página inicial da oficina.
+- **getSubMenu**: Obtém os dados do submenu de páginas disponíveis.
+- **getItemBySlug**: Obtém os dados de um post específico com base em seu slug.
+
+## Metadados Dinâmicos
+
+A aplicação gera metadados dinâmicos para cada página com base nos dados obtidos da API. Isso inclui título, descrição, palavras-chave e imagens para OpenGraph.
